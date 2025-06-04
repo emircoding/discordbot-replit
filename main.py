@@ -1,6 +1,8 @@
 from keep_alive import keep_alive
-from bot import bot  # importiere den Bot aus bot.py
+from bot import bot
+import os
 
-keep_alive()  # Starte Webserver für UptimeRobot
+keep_alive()
 
-bot.run("DEIN_BOT_TOKEN_HIER")  # <-- Ersetze mit deinem Bot-Token
+token = os.getenv("DISCORD_TOKEN")  # <-- Token aus Railway-Variable
+bot.run(token)
